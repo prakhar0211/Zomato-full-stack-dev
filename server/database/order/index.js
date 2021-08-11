@@ -21,7 +21,10 @@ const OrderSchema = new mongoose.Schema({
             }
         }
     ],
-    orderRatings:{type:Number,required:true},
-})
+    orderRatings: { type: Number, required: true },
+},
+    {
+        timestamps: true,
+    })
 
 export const OrderModel = mongoose.Model("Orders", OrderSchema);

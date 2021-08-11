@@ -21,6 +21,9 @@ const ReviewSchema = new mongoose.Schema({
             ref: "Images"
         }
     ],
-})
+},
+    {
+        timestamps: true,
+    })
 
 export const ReviewModel = mongoose.Model("Reviews", ReviewSchema)
