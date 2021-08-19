@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema({
     user: {
@@ -27,4 +27,4 @@ const OrderSchema = new mongoose.Schema({
         timestamps: true,
     })
 
-export const OrderModel = mongoose.Model("Orders", OrderSchema);
+export const OrderModel = mongoose.model("Orders", OrderSchema);
