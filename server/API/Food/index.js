@@ -14,7 +14,7 @@ params      id
 Acess       Public
 Method      get
 */
-Router.get("/r/:_id", (req, res) => {
+Router.get("/r/:_id", async (req, res) => { 
     try {
         const { _id } = req.params;
         const foods = await FoodModel.find({ restaurant: _id });
@@ -32,7 +32,7 @@ params      id
 Acess       Public
 Method      get
 */
-Router.get("/c/:category", (req, res) => {
+Router.get("/c/:category", async (req, res) => {
     try {
         const { category } = req.params;
         const foods = await FoodModel.find({ category: { $regex: category, $options: "i" } });
