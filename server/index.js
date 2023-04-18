@@ -8,7 +8,9 @@ import passport from "passport";
 import googleAuthConfig from "./config/google.config"
 
 // microservice routes
-import Auth from "./API/Auth"
+import Auth from "./API/Auth";
+import Restaurant from "./API/Restaurant";
+
 // Database connection
 import ConnectDB from "./database/connection";
 import session from "express-session";
@@ -27,7 +29,9 @@ zomato.use(passport.session());
 // passport configuration
 googleAuthConfig(passport);
 
+// Application Routes
 zomato.use("/auth", Auth);
+zomato.use("/restaurant", Restaurant);
 
 zomato.get("/", (req, res) => res.json({ message: "Setup Success" }));
 
